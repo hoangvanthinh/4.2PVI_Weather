@@ -1,0 +1,72 @@
+Note:
+*UPDATE: 10.04.2020-------------------------------------------------------------
+//-[0] XC16-GCC: -std=gnu99
+-[1] SES.h: 
+-[2] Tick.h: millis()
+-[3] Gtype.h
+-[4] SPI1: ETH_CS, INT_CS, Baudrate[150k], [IDLE-Active:LOW-HIGH], [END], Master
+-[5] reset.h: RESET()
+-[6]     
+    unsigned char buf[4];
+    buf[3] = 0x40;
+    buf[2] = 0x28;
+    buf[1] = 0x51;
+    buf[0] = 0xd8;
+    
+    float x  = *(float*)&buf;
+    printf("x = %0.8f\n", x);
+    int y= 9;
+    printf("y = %d", *(&y));
+
+
+//             Vin.val32 = *P42.V1N;
+//             VA.val16[0] = Vin.val16[1];
+//             VA.val16[1] = Vin.val16[0];
+//             x = *(float*)&VA.val;
+//             printf("SES: %lf\r\n",x);
+//=================================
++24/07/2020: update PCB v3.0, used dsPIC33EP256MU810
+//==============================================================================
++24/08/2020: update 1 Interface - 5 Multiple meter (Different)
+//==============================================================================
++04/09/2020: update save EEPROM AT24MC02: note delay Read and Write
++04/09/2020: update Meter: TENSE EM-07, SELEC MFM374, Mikro DPM380-415AD.
+
+
+@ Note: Why Optimization level = > 0 ===> Error in Modbus RTU Master?????
+//-------------------------------------------------------------------------------
++17/09/2020: PM2120 Modbus?
+...........: EM-07k? uint16 to Float32?
++..........: bus Modbus RS485 R = 120R
++..........: Timeout and ScanRate
+//==============================================================================
++ Update Nhiet do, do am.
+
+//==============================================================================
++ ERROR trung MAC ID.
++ ERRor KHOI TAO FRAME KHONG DUNG: telegram[]
+//==========================ver 4.221===========================================
++ Update: Read data default if No data in EEPROM => ok
++ Update: ADD_START_SETUP 1000
+//========================== ver4.24: 03/12/2020 ==============================
++Update: Thanh ghi n?ng l??ng INT32
+//=======================SEOJIN=================================================
+1. if ((uint32_t)(millis() - SES_Modbus.u32timeOut) > (uint32_t)SES_Modbus.u16timeOut)
+2. t?ng timeout RS485
+3. Update Setup timeout
+4. ??i Q <=> S, Eq <=> Es
+5.validate message: ID
+//======================= SEOJIN 13.01.2020 ===================================
++ VER 4.2631 Test hieu n?ng Ethernet
+
+//===================== 18012020 ==============================================
++ Update : upgrade RAM for 10MM
++ Delete : ID_Temperature
+//===================== v4.2633 ================================================
++update: SID only device on system [0-2000]
+    MODBUS REG[30086], [30199], [30348]
++update: setup SID for MM # UID of RS485
+//===================== V4.27 =================================================
++ Type Device: [1] INTERFAC; [2] GATEWAY
++ Update phan mem Setup SEMS-L: Status [Connected/ Disconnected]  => REG[0]
++ Update version F/W and H/W
