@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/production/4.2-I_4.27_Setup.X.production.elf">
+  <executable name="dist/default/production/4.2-LI.X.production.elf">
     <memory name="data">
       <units>bytes</units>
       <length>53248</length>
