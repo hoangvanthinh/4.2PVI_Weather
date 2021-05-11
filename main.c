@@ -60,26 +60,6 @@ int main(void) {
 
     Init_Temperaturex27();
     READ_I42_Setup();
-
-
-
-    //--------------------------------------------------------------------------
-    // MULTIMETER
-//    if(Status_Save_Erom != 111)
-//    {
-//        NumberofMeter = 5;
-//        
-//        Meters[0].ID = 1;
-//        Meters[0].Series = SELEC_MFM384;
-//        Meters[1].ID = 2;
-//        Meters[1].Series = SCHNEIDER_PM2120;
-//        Meters[2].ID = 3;
-//        Meters[2].Series = SCHNEIDER_PM2120;
-//        Meters[3].ID = 4;
-//        Meters[3].Series = SCHNEIDER_PM2120;
-//        Meters[4].ID = 5;
-//        Meters[4].Series = SCHNEIDER_PM2120;
-//    }
     //====================================================================
     Information_Device();
     SES_ModbusTCP_Server_Init();
@@ -98,14 +78,12 @@ int main(void) {
         if (TickGet() - t >= TICK_SECOND) {
             t = TickGet();
             RD_RED_Toggle();
-            counter_life++;
-            
+            counter_life++;            
         }
         if(counter_life > 30)
         {
             Reset();
         }
-
         SES_ModbusTCP_Server_Process();
         if (NumberofMeter > 0 && NumberofMeter < 11) {
             SES_ModbusRTU_Master_Process();
