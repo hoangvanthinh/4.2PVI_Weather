@@ -106,12 +106,12 @@ static void InitAppConfig(void) {
     AppConfig.Flags.bInConfigMode = true;
     //AppConfig.Flags.bInConfigMode = false ;
     SerializedMACAddress[5] = Parameter42.IP[3];
-    
+
     memcpypgm2ram((void*) &AppConfig.MyMACAddr, (ROM void*) SerializedMACAddress,
             sizeof (AppConfig.MyMACAddr));
-    
 
-    
+
+
 #if defined STACK_USE_DHCP_CLIENT
     AppConfig.Flags.bIsDHCPEnabled = true;
     AppConfig.MyIPAddr.Val = 0;
@@ -196,7 +196,6 @@ static void MODBUSTCPServer(void) {
         SM_RECEIVEDATA,
         SM_CLOSING,
     } MODBUSTCPServerState = SM_HOME;
-//    printf("SM: %d\n\r",MODBUSTCPServerState);
 
     switch (MODBUSTCPServerState) {
         case SM_HOME:
@@ -204,7 +203,6 @@ static void MODBUSTCPServer(void) {
             MySocket = TCPOpen(0, TCP_OPEN_SERVER, MODBUS_PORT, TCP_PURPOSE_MODBUS_TCP_SERVER);
 
             if (MySocket == INVALID_SOCKET) {
-                //printf("Invalib\r\n");
                 return;
             }
 
@@ -215,40 +213,30 @@ static void MODBUSTCPServer(void) {
             // See if anyone is connected to us
             if ((!TCPIsConnected(MySocket)))//|| TCPWasReset(MySocket))
             {
-//                TCPClose(MySocket);
-//                MODBUSTCPServerState = SM_CLOSING;
+                //                TCPClose(MySocket);
+                //                MODBUSTCPServerState = SM_CLOSING;
                 return;
-//                break;
+                //                break;
             } else
                 // Figure out how many bytes have been received and how many we can transmit.
                 wMaxGet = TCPIsGetReady(MySocket); // Get TCP RX FIFO byte count
 
-
             if (wMaxGet != 0) {
                 TCPGetArray(MySocket, &MODBUS_RX[0], wMaxGet);
                 ProcessReceivedMessage();
-                counter_life  = 0;
-          
-                
+                counter_life = 0;
+
+
                 switch (MODBUS_COMMAND.FunctionCode) {
                     case ReadHoldingRegister:
-
-                        //HOLDING_REG[2]++;
                         //Assemble the data
                         readHoldingRegister();
 
                         //Test if server sends Exception error to the client
                         if (!(MODBUS_TX[MODBUS_FunctionCode] == 0X83)) {
                             w = 0x09 + MODBUS_TX[8];
-                        }
-                        else w = 9;
-                        
-//    u16crc = SES_Modbus_calcCRC( w );
-//    MODBUS_TX[w] = u16crc >> 8;
-//    w++;
-//    MODBUS_TX[w ] = u16crc & 0x00ff;
-//    w++;
-    
+                        } else w = 9;
+
                         TCPPutArray(MySocket, MODBUS_TX, w);
                         //printf("PUT: %d\r\n",w);
                         break;
@@ -261,13 +249,7 @@ static void MODBUSTCPServer(void) {
                         //Test if server sends Exception error to the client
                         if (!(MODBUS_TX[MODBUS_FunctionCode] == 0X90)) {
                             w = 12;
-                        }
-                        else w = 9;
-//    u16crc = SES_Modbus_calcCRC( w );
-//    MODBUS_TX[w] = u16crc >> 8;
-//    w++;
-//    MODBUS_TX[w ] = u16crc & 0x00ff;
-//    w++;
+                        } else w = 9;
 
                         TCPPutArray(MySocket, MODBUS_TX, w);
 
@@ -280,13 +262,8 @@ static void MODBUSTCPServer(void) {
                         //Test if server sends Exception error to the client
                         if (!(MODBUS_TX[MODBUS_FunctionCode] == 0X84)) {
                             w = 0x09 + MODBUS_TX[8];
-                        }
-                        else w = 9;
-//    u16crc = SES_Modbus_calcCRC( w );
-//    MODBUS_TX[w] = u16crc >> 8;
-//    w++;
-//    MODBUS_TX[w ] = u16crc & 0x00ff;
-//    w++;
+                        } else w = 9;
+
                         TCPPutArray(MySocket, MODBUS_TX, w);
 
                         break;
@@ -299,13 +276,8 @@ static void MODBUSTCPServer(void) {
                         //Test if server sends Exception error to the client
                         if (!(MODBUS_TX[MODBUS_FunctionCode] == 0X85)) {
                             w = 0x09 + MODBUS_TX[8];
-                        }
-                        else w = 12;
-//    u16crc = SES_Modbus_calcCRC( w );
-//    MODBUS_TX[w] = u16crc >> 8;
-//    w++;
-//    MODBUS_TX[w ] = u16crc & 0x00ff;
-//    w++;
+                        } else w = 12;
+
                         TCPPutArray(MySocket, MODBUS_TX, w);
 
                         break;
@@ -412,7 +384,9 @@ static void readHoldingRegister(void) {
     MODBUS_RX[4] = 0X0;
     MODBUS_RX[5] = 0X3 + MODBUS_RX[8];
 
-
+//    if(MODBUS_COMMAND.UnitID == 1)
+//        MODBUS_COMMAND.UnitID = 6;
+//    SES_INPUTREG[5][1] = 1234;
     //memcpy(REG_TEMP, INPUT_REG_SES + MODBUS_COMMAND.StartAddress.Val, MODBUS_COMMAND.NumberOfRegister.Val*2);
     memcpy(REG_TEMP, SES_INPUTREG[MODBUS_COMMAND.UnitID - 1] + MODBUS_COMMAND.StartAddress.Val, MODBUS_COMMAND.NumberOfRegister.Val * 2);
 

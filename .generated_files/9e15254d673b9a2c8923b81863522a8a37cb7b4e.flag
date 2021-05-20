@@ -1,0 +1,1 @@
+ -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-g,--no-relax$(MP_EXTRA_AS_POST) F:\Project\1.SES\1.P4.2\SourceCode\1.SEMS_L\4.2-LI.X\Framework\tcpip\src\common\big_int_helper.S

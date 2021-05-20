@@ -70,4 +70,5 @@ Note:
 + Type Device: [1] INTERFAC; [2] GATEWAY
 + Update phan mem Setup SEMS-L: Status [Connected/ Disconnected]  => REG[0]
 + Update version F/W and H/W
-//
+//==================== 
++> Update W_Meter_SID > 255 UINT16, Read, Write EEProm

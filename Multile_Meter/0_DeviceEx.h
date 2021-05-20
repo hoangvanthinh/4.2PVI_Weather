@@ -108,13 +108,13 @@ typedef struct
     uint8_t Num_Frame;
     Meter_Frame Fr[15];
     uint8_t Allow_EN;
-    uint8_t SID;
+    uint16_t SID;
 }Meter_Setup;
 
 typedef struct
 {
     Meter_Setup Setup;
-    uint16_t Data_Reg_Meters[500];       
+    uint16_t Data_Reg_Meters[350];       
     GetData GetDataMeter;       
     int8_t Status;
 } Multiple_Meter;
@@ -159,7 +159,7 @@ extern uint8_t NumberofMeter;
 
 //extern WORD  INPUT_REG_SES[INPUT_REG_SIZE_M];
 //extern WORD  HOLDING_REG_SES[HOLDING_REG_SIZE_M];
-extern WORD  SES_INPUTREG[Max_Number_METER][INPUT_REG_SIZE_M];
+extern UINT16  SES_INPUTREG[Max_Number_METER][INPUT_REG_SIZE_M];
 
 // TODO Insert appropriate #include <>
 

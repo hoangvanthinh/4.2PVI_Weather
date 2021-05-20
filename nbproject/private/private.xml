@@ -3,8 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/Project/SES/1.P.4.2/SourceCode/1.SEMS_L/4.2-I_4.27_Setup.X/Modbus/ModbusRTU_Slave.c</file>
-            <file>file:/F:/Project/SES/1.P.4.2/SourceCode/1.SEMS_L/4.2-I_4.27_Setup.X/main.c</file>
+            <file>file:/F:/Project/1.SES/1.P4.2/SourceCode/1.SEMS_L/4.2-LI.X/Modbus/ModbusTCPServer.c</file>
+            <file>file:/F:/Project/1.SES/1.P4.2/SourceCode/1.SEMS_L/4.2-LI.X/SES_USERGUIDE.txt</file>
+            <file>file:/F:/Project/1.SES/1.P4.2/SourceCode/1.SEMS_L/4.2-LI.X/Multile_Meter/0_DeviceEx.c</file>
+            <file>file:/F:/Project/1.SES/1.P4.2/SourceCode/1.SEMS_L/4.2-LI.X/Multile_Meter/1_SELEC_MFM384.c</file>
+            <file>file:/F:/Project/1.SES/1.P4.2/SourceCode/1.SEMS_L/4.2-LI.X/Modbus/ModbusRTU_Master.c</file>
+            <file>file:/F:/Project/1.SES/1.P4.2/SourceCode/1.SEMS_L/4.2-LI.X/user.c</file>
+            <file>file:/F:/Project/1.SES/1.P4.2/SourceCode/1.SEMS_L/4.2-LI.X/main.c</file>
+            <file>file:/F:/Project/1.SES/1.P4.2/SourceCode/1.SEMS_L/4.2-LI.X/Multile_Meter/0_DeviceEx.h</file>
         </group>
     </open-files>
 </project-private>

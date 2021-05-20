@@ -171,6 +171,7 @@ static void SES_ModbusRTU_Frame_Transaction(void)
 //            printf("f %d\r",f);
 //            printf("fFr2 %d\r",Num_Fr);
         }
+//        printf("i %d\r",i);
     }
 //    printf("Num_Fr2 %d\r",Num_Fr);
 }

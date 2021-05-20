@@ -38,7 +38,8 @@ void SELEC_MFM384_Init(void) {
 void GetDataMeter_SELEC_MFM384(uint8_t ID) {
     // BIG-ENDIAN 32 FLOAT
     *SES42[ID].V1N = ((((UINT32) Meters[ID].Data_Reg_Meters[0] << 16)& 0xFFFF0000) | (UINT32) Meters[ID].Data_Reg_Meters[1]);
-
+//    if(ID>=5) *SES42[ID].V1N = ID;
+    
     *SES42[ID].V2N = ((((INT32) Meters[ID].Data_Reg_Meters[2] << 16)& 0xFFFF0000) | (INT32) Meters[ID].Data_Reg_Meters[3]);
     *SES42[ID].V3N = ((((INT32) Meters[ID].Data_Reg_Meters[4] << 16)& 0xFFFF0000) | (INT32) Meters[ID].Data_Reg_Meters[5]);
     *SES42[ID].V_LN_Avg = ((((INT32) Meters[ID].Data_Reg_Meters[6] << 16)& 0xFFFF0000) | (INT32) Meters[ID].Data_Reg_Meters[7]);

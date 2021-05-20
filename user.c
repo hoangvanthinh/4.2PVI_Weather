@@ -8,7 +8,8 @@ uint16_t SETUP_TIMEOUT = 0;
 Device_Git Device_Version;
 
 uint8_t W_IP[4], W_MAC[6], W_SubnetMask[4], W_Gateway[4], W_PRIMARY_DNS[4], W_numMeter; 
-uint8_t W_Meter_Series[10], W_Meter_SID[10];
+uint8_t W_Meter_Series[10];
+UINT16 W_Meter_SID[10];
 uint8_t W_En_ConnectID[10];
 
 Mysetup Parameter42;
@@ -60,7 +61,7 @@ void READ_I42_Setup(void) {
         //======================================================================
         EEPROM3_ReadBlock(ADD_START_SETUP + 44, Setup_timeout.val, 2);
         //======================================================================
-        EEPROM3_ReadBlock(ADD_START_SETUP + 46, W_Meter_SID, 10);
+        EEPROM3_ReadBlock(ADD_START_SETUP + 46, W_Meter_SID, 20);
         __delay_ms(10);
         for (i = 0; i < *Parameter42.NumofMeter; i++) 
             Meters[i].Setup.SID = W_Meter_SID[i];      
@@ -193,7 +194,7 @@ void WRITE_MY_Setup(void) {
     EEPROM3_WriteBlock(ADD_START_SETUP + 44, Setup_timeout.val, 2);
     __delay_ms(10);
     //============================ 44 + 2 ======================================
-    EEPROM3_WriteBlock(ADD_START_SETUP + 46, W_Meter_SID, 10);
+    EEPROM3_WriteBlock(ADD_START_SETUP + 46, W_Meter_SID, 20);
     __delay_ms(10);
     
     //==========================================================================

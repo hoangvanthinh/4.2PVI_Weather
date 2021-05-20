@@ -16,7 +16,8 @@ Meter_Setup
 
 void (*MultipleMeter_update_42SES)(uint8_t ID);
 
-WORD SES_INPUTREG[Max_Number_METER][INPUT_REG_SIZE_M] = {};
+UINT16 SES_INPUTREG[Max_Number_METER][INPUT_REG_SIZE_M];// = {};
+
 static union {
     int8_t val[4];
     int32_t val32;
@@ -246,7 +247,7 @@ void Meters_10_Init(void) {
                     Meters[m].Setup.Fr[f].Pointer = Selec_MFM374.Fr[f].Pointer;
                 }   
                 Meters[m].GetDataMeter = &GetDataMeter_SELEC_MFM374;
-
+                break;
             case SELEC_MFM384:
                 SELEC_MFM384_Init();
                 Meters[m].Setup.Func = Selec_MFM384.Func;
