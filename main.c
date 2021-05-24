@@ -58,8 +58,7 @@ int main(void) {
     // initialize the device
     SYSTEM_Initialize();
 
-    Init_Temperaturex27();
-    READ_I42_Setup();
+//    READ_I42_Setup();
     //====================================================================
     Information_Device();
     SES_ModbusTCP_Server_Init();
@@ -67,8 +66,7 @@ int main(void) {
     //--------------------------------------------------------------------------
     Modbus_RTU_Slave_Add_Setup();
     SES_ModbusRTU_Slave_start();
-    //
-    
+
     SPEAKER_SetHigh();
     __delay_ms(200);
     SPEAKER_SetLow();
@@ -78,17 +76,12 @@ int main(void) {
         if (TickGet() - t >= TICK_SECOND) {
             t = TickGet();
             RD_RED_Toggle();
-            counter_life++;            
         }
-        if(counter_life > 30)
-        {
-            Reset();
-        }
+
         SES_ModbusTCP_Server_Process();
-        if (NumberofMeter > 0 && NumberofMeter < 11) {
-            SES_ModbusRTU_Master_Process();
-        }
-        SES_ModbusRTU_Slave_Process();
+        SES_ModbusRTU_Master_Process();
+        
+      
     }
     return 1;
 }

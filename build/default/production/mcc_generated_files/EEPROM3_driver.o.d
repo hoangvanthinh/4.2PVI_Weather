@@ -56,19 +56,15 @@ build/default/production/mcc_generated_files/EEPROM3_driver.o: \
  mcc_generated_files/../Modbus/ModbusRTU_Slave.h \
  mcc_generated_files/../Modbus/ModbusRTU.h \
  mcc_generated_files/../Modbus/ModbusRTU_Master.h \
- mcc_generated_files/../Multile_Meter/0_DeviceEx.h \
- mcc_generated_files/../Multile_Meter/1_SELEC_MFM384.h \
- mcc_generated_files/../Multile_Meter/2_SELEC_EM368C.h \
- mcc_generated_files/../Multile_Meter/3_Schneider_PM2120.h \
- mcc_generated_files/../Multile_Meter/4_SELEC_MFM374.h \
- mcc_generated_files/../Multile_Meter/5_TENSE_EM_07K.h \
- mcc_generated_files/../Multile_Meter/6_MIKRO_DPM380_415AD.h \
- mcc_generated_files/../Multile_Meter/7_MITSU_ME96SSRA_MB.h \
  mcc_generated_files/../4_2_Data.h mcc_generated_files/../SES.h \
  mcc_generated_files/../mcc_generated_files/EEPROM3_driver.h \
  mcc_generated_files/../mcc_generated_files/EEPROM3_example.h \
- mcc_generated_files/../user.h mcc_generated_files/../DS18B20x27.h \
- mcc_generated_files/../DHT22.h
+ mcc_generated_files/../user.h \
+ mcc_generated_files/../WeatherSensor/Weather.h \
+ mcc_generated_files/../WeatherSensor/1.Irradiation/0.Irradiation.h \
+ mcc_generated_files/../WeatherSensor/1.Irradiation/1.RIKA_RK200_04.h \
+ mcc_generated_files/../WeatherSensor/2.Windirection/0.Windirection.h \
+ mcc_generated_files/../WeatherSensor/3.WindSpeed/0.Winspeed.h
 
 mcc_generated_files/../SES.h:
 
@@ -184,22 +180,6 @@ mcc_generated_files/../Modbus/ModbusRTU.h:
 
 mcc_generated_files/../Modbus/ModbusRTU_Master.h:
 
-mcc_generated_files/../Multile_Meter/0_DeviceEx.h:
-
-mcc_generated_files/../Multile_Meter/1_SELEC_MFM384.h:
-
-mcc_generated_files/../Multile_Meter/2_SELEC_EM368C.h:
-
-mcc_generated_files/../Multile_Meter/3_Schneider_PM2120.h:
-
-mcc_generated_files/../Multile_Meter/4_SELEC_MFM374.h:
-
-mcc_generated_files/../Multile_Meter/5_TENSE_EM_07K.h:
-
-mcc_generated_files/../Multile_Meter/6_MIKRO_DPM380_415AD.h:
-
-mcc_generated_files/../Multile_Meter/7_MITSU_ME96SSRA_MB.h:
-
 mcc_generated_files/../4_2_Data.h:
 
 mcc_generated_files/../SES.h:
@@ -210,6 +190,12 @@ mcc_generated_files/../mcc_generated_files/EEPROM3_example.h:
 
 mcc_generated_files/../user.h:
 
-mcc_generated_files/../DS18B20x27.h:
+mcc_generated_files/../WeatherSensor/Weather.h:
 
-mcc_generated_files/../DHT22.h:
+mcc_generated_files/../WeatherSensor/1.Irradiation/0.Irradiation.h:
+
+mcc_generated_files/../WeatherSensor/1.Irradiation/1.RIKA_RK200_04.h:
+
+mcc_generated_files/../WeatherSensor/2.Windirection/0.Windirection.h:
+
+mcc_generated_files/../WeatherSensor/3.WindSpeed/0.Winspeed.h:

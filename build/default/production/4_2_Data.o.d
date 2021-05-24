@@ -36,12 +36,12 @@ build/default/production/4_2_Data.o: 4_2_Data.c SES.h \
  Framework/sysconf_inc/tcpip_config.h Sstype.h Modbus/ModbusRTU.h \
  Modbus/Modbus.h Modbus/ModbusTCPIP.h Modbus/ModbusTCPIP_Server.h \
  Modbus/ModbusRTU_Slave.h Modbus/ModbusRTU.h Modbus/ModbusRTU_Master.h \
- Multile_Meter/0_DeviceEx.h Multile_Meter/1_SELEC_MFM384.h \
- Multile_Meter/2_SELEC_EM368C.h Multile_Meter/3_Schneider_PM2120.h \
- Multile_Meter/4_SELEC_MFM374.h Multile_Meter/5_TENSE_EM_07K.h \
- Multile_Meter/6_MIKRO_DPM380_415AD.h Multile_Meter/7_MITSU_ME96SSRA_MB.h \
  4_2_Data.h mcc_generated_files/EEPROM3_driver.h \
- mcc_generated_files/EEPROM3_example.h user.h DS18B20x27.h DHT22.h
+ mcc_generated_files/EEPROM3_example.h user.h WeatherSensor/Weather.h \
+ WeatherSensor/1.Irradiation/0.Irradiation.h \
+ WeatherSensor/1.Irradiation/1.RIKA_RK200_04.h \
+ WeatherSensor/2.Windirection/0.Windirection.h \
+ WeatherSensor/3.WindSpeed/0.Winspeed.h
 
 SES.h:
 
@@ -157,22 +157,6 @@ Modbus/ModbusRTU.h:
 
 Modbus/ModbusRTU_Master.h:
 
-Multile_Meter/0_DeviceEx.h:
-
-Multile_Meter/1_SELEC_MFM384.h:
-
-Multile_Meter/2_SELEC_EM368C.h:
-
-Multile_Meter/3_Schneider_PM2120.h:
-
-Multile_Meter/4_SELEC_MFM374.h:
-
-Multile_Meter/5_TENSE_EM_07K.h:
-
-Multile_Meter/6_MIKRO_DPM380_415AD.h:
-
-Multile_Meter/7_MITSU_ME96SSRA_MB.h:
-
 4_2_Data.h:
 
 mcc_generated_files/EEPROM3_driver.h:
@@ -181,6 +165,12 @@ mcc_generated_files/EEPROM3_example.h:
 
 user.h:
 
-DS18B20x27.h:
+WeatherSensor/Weather.h:
 
-DHT22.h:
+WeatherSensor/1.Irradiation/0.Irradiation.h:
+
+WeatherSensor/1.Irradiation/1.RIKA_RK200_04.h:
+
+WeatherSensor/2.Windirection/0.Windirection.h:
+
+WeatherSensor/3.WindSpeed/0.Winspeed.h:

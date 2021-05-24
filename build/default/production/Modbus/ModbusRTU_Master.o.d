@@ -50,17 +50,14 @@ build/default/production/Modbus/ModbusRTU_Master.o: \
  Modbus/../Modbus/ModbusRTU.h Modbus/../Modbus/Modbus.h \
  Modbus/../Modbus/ModbusTCPIP.h Modbus/../Modbus/ModbusTCPIP_Server.h \
  Modbus/../Modbus/ModbusRTU_Slave.h Modbus/../Modbus/ModbusRTU.h \
- Modbus/../Modbus/ModbusRTU_Master.h Modbus/../Multile_Meter/0_DeviceEx.h \
- Modbus/../Multile_Meter/1_SELEC_MFM384.h \
- Modbus/../Multile_Meter/2_SELEC_EM368C.h \
- Modbus/../Multile_Meter/3_Schneider_PM2120.h \
- Modbus/../Multile_Meter/4_SELEC_MFM374.h \
- Modbus/../Multile_Meter/5_TENSE_EM_07K.h \
- Modbus/../Multile_Meter/6_MIKRO_DPM380_415AD.h \
- Modbus/../Multile_Meter/7_MITSU_ME96SSRA_MB.h Modbus/../4_2_Data.h \
- Modbus/../SES.h Modbus/../mcc_generated_files/EEPROM3_driver.h \
+ Modbus/../Modbus/ModbusRTU_Master.h Modbus/../4_2_Data.h Modbus/../SES.h \
+ Modbus/../mcc_generated_files/EEPROM3_driver.h \
  Modbus/../mcc_generated_files/EEPROM3_example.h Modbus/../user.h \
- Modbus/../DS18B20x27.h Modbus/../DHT22.h
+ Modbus/../WeatherSensor/Weather.h \
+ Modbus/../WeatherSensor/1.Irradiation/0.Irradiation.h \
+ Modbus/../WeatherSensor/1.Irradiation/1.RIKA_RK200_04.h \
+ Modbus/../WeatherSensor/2.Windirection/0.Windirection.h \
+ Modbus/../WeatherSensor/3.WindSpeed/0.Winspeed.h
 
 Modbus/../SES.h:
 
@@ -176,22 +173,6 @@ Modbus/../Modbus/ModbusRTU.h:
 
 Modbus/../Modbus/ModbusRTU_Master.h:
 
-Modbus/../Multile_Meter/0_DeviceEx.h:
-
-Modbus/../Multile_Meter/1_SELEC_MFM384.h:
-
-Modbus/../Multile_Meter/2_SELEC_EM368C.h:
-
-Modbus/../Multile_Meter/3_Schneider_PM2120.h:
-
-Modbus/../Multile_Meter/4_SELEC_MFM374.h:
-
-Modbus/../Multile_Meter/5_TENSE_EM_07K.h:
-
-Modbus/../Multile_Meter/6_MIKRO_DPM380_415AD.h:
-
-Modbus/../Multile_Meter/7_MITSU_ME96SSRA_MB.h:
-
 Modbus/../4_2_Data.h:
 
 Modbus/../SES.h:
@@ -202,6 +183,12 @@ Modbus/../mcc_generated_files/EEPROM3_example.h:
 
 Modbus/../user.h:
 
-Modbus/../DS18B20x27.h:
+Modbus/../WeatherSensor/Weather.h:
 
-Modbus/../DHT22.h:
+Modbus/../WeatherSensor/1.Irradiation/0.Irradiation.h:
+
+Modbus/../WeatherSensor/1.Irradiation/1.RIKA_RK200_04.h:
+
+Modbus/../WeatherSensor/2.Windirection/0.Windirection.h:
+
+Modbus/../WeatherSensor/3.WindSpeed/0.Winspeed.h:

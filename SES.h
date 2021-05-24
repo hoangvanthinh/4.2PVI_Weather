@@ -53,16 +53,16 @@
 #include "Modbus/ModbusRTU_Slave.h"
 #include "Modbus/ModbusRTU_Master.h"
 
-#include "Multile_Meter/0_DeviceEx.h"
+//#include "Multile_Meter/0_DeviceEx.h"
 
 #include "4_2_Data.h"
 
 #include "mcc_generated_files/EEPROM3_driver.h"
 #include "mcc_generated_files/EEPROM3_example.h"
 #include "user.h"
-#include "DS18B20x27.h"
-#include "DHT22.h"
-
+//#include "DS18B20x27.h"
+//#include "DHT22.h"
+#include "WeatherSensor/Weather.h"
 
 
 #define MY_name_INTERFACE_L  1

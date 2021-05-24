@@ -384,11 +384,8 @@ static void readHoldingRegister(void) {
     MODBUS_RX[4] = 0X0;
     MODBUS_RX[5] = 0X3 + MODBUS_RX[8];
 
-//    if(MODBUS_COMMAND.UnitID == 1)
-//        MODBUS_COMMAND.UnitID = 6;
-//    SES_INPUTREG[5][1] = 1234;
-    //memcpy(REG_TEMP, INPUT_REG_SES + MODBUS_COMMAND.StartAddress.Val, MODBUS_COMMAND.NumberOfRegister.Val*2);
-    memcpy(REG_TEMP, SES_INPUTREG[MODBUS_COMMAND.UnitID - 1] + MODBUS_COMMAND.StartAddress.Val, MODBUS_COMMAND.NumberOfRegister.Val * 2);
+    memcpy(REG_TEMP, INPUT_REG + MODBUS_COMMAND.StartAddress.Val, MODBUS_COMMAND.NumberOfRegister.Val*2);
+//    memcpy(REG_TEMP, SES_INPUTREG[MODBUS_COMMAND.UnitID - 1] + MODBUS_COMMAND.StartAddress.Val, MODBUS_COMMAND.NumberOfRegister.Val * 2);
 
     for (a = 0; a < MODBUS_COMMAND.NumberOfRegister.Val; a++) {
         REG_TEMP[a] = (WORD) ((REG_TEMP[a] & 0x00FF) << 8 | (REG_TEMP[a] & 0xFF00) >> 8);

@@ -808,41 +808,9 @@ static int8_t process_FC16( uint16_t *regs, uint8_t u8size )
 void SES_ModbusRTU_Slave_Process(void)
 {
         
-        static int8_t state = 0,i;
+        static int8_t state = 0;
         state = SES_ModbusRTU_Slave_poll( SES_42.SETUP_REGS, 100 );
-        
-
-        
-//        SES_42.Coils.bits.b11 = Meters[0].Status;
-//        SES_42.Coils.bits.b12 = Meters[1].Status;
-//        SES_42.Coils.bits.b13 = Meters[2].Status;
-//        SES_42.Coils.bits.b14 = Meters[3].Status;
-//        SES_42.Coils.bits.b15 = Meters[4].Status;
-//        SES_42.Coils.bits.b16 = Meters[5].Status;
-//        SES_42.Coils.bits.b17 = Meters[6].Status;
-//        SES_42.Coils.bits.b18 = Meters[7].Status;
-//        SES_42.Coils.bits.b19 = Meters[8].Status;
-//        SES_42.Coils.bits.b20 = Meters[9].Status;
-        
-        for(i=0;i<10;i++)
-        {
-            if(Meters[i].Status)
-            {
-                SES_42.Coils.val |= 1<<(i+11);
-//                *SES42[i].Status |= 1;
-            }
-            else
-            {
-                SES_42.Coils.val &= ~(1<<(i+11)); 
-//                *SES42[i].Status = 0;
-            }
-            *SES42[i].Status = Meters[i].Status;
-
-        }
-        
         Check_Save_DataSetup();
         
-        //=================== WRITE SETUP =================================
- 
        
 }

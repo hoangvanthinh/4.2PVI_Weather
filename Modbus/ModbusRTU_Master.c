@@ -3,7 +3,7 @@
 
 
 MODBUS SES_Modbus;
-MODBUS_MASTER_TELEGRAM telegram[50];
+MODBUS_MASTER_TELEGRAM telegram[7];
 //uint16_t BUFF_INPUTREGS[125];
 //uint16_t au16data[125], au16data1[125], au16data2[125]; //!< data array for modbus network sharing
 static uint8_t u8state; //!< machine state
@@ -107,12 +107,6 @@ void SES_ModbusRTU_Master_Process(void)
            break;
          case 1: //===========================================================
 
-//           SES_Modbus_query( telegram[u8query] ); // send query (only once)
-//           u8state++;
-//           u8query++;
-//           if(!telegram[u8query].Allow_EN)
-//               u8query++;
-             
             if(telegram[u8query].Allow_EN)
             {
                 SES_Modbus_query( telegram[u8query] ); // send query (only once)
@@ -120,60 +114,49 @@ void SES_ModbusRTU_Master_Process(void)
             }
             u8query++;
 
-           
-
            if (u8query >= MAX_Query) u8query = 0;
            break;
          case 2:///////////////////////////////////////////////////////
 
            SES_Modbus_Master_poll(); // check incoming messages
-           Meters[telegram[u8query].u8id - 1].GetDataMeter(telegram[u8query].u8id - 1);
+       
            if (SES_Modbus_getState() == COM_IDLE) {
              u8state = 0;
              u32wait = millis() + SCAN_RATE; 
-
            }
-
            break;
-     }
-
- 
-    
+     }  
 }
 
 static void SES_ModbusRTU_Frame_Transaction(void)
 {  
-  
-    Meters_10_Init();
-    uint8_t i;
-    // SO KHUNG TRUYEN INTERFACE THUC HIEN REQUETS = E()
-
-    for(i=0;i< NumberofMeter;i++)
-        Num_Fr += Meters[i].Setup.Num_Frame;
-
-    // GAN - SETUP KHUNG TRUYEN INTERFACE -> METER
-    static uint8_t f=0;
-    static uint8_t j=0;
-    for(i = 0; i < NumberofMeter; i++)
+//            telegram[f].Allow_EN = Meters[i].Setup.Allow_EN;
+//            telegram[f].u8id = i+1;
+//            telegram[f].series =  Meters[i].Setup.Series;
+//            telegram[f].u8fct  =  Meters[i].Setup.Func;
+//            
+//            telegram[f].u16RegAdd  = Meters[i].Setup.Fr[j].REGsAdd; 
+//            telegram[f].u16CoilsNo = Meters[i].Setup.Fr[j].NumberREGs;        
+//            telegram[f].au16reg    = Meters[i].Data_Reg_Meters + Meters[i].Setup.Fr[j].Pointer;
+    
+    // READ INIT FROM EEPROM
+    // exp
+    Sensor[SENSOR_IRRADIATION].Setup.Series = RIKA_200_04;
+    //.....
+    // WIND, RAIN
+    
+    All_Sensor_Init();     
+    
+    int i = 0;
+    for(i = 0; i < MAX_Sensor; i++)
     {
-        
-        for(j=0;j < Meters[i].Setup.Num_Frame; j++)
-        {
-            telegram[f].Allow_EN = Meters[i].Setup.Allow_EN;
-            telegram[f].u8id = i+1;
-            telegram[f].series =  Meters[i].Setup.Series;
-            telegram[f].u8fct  =  Meters[i].Setup.Func;
-            
-            telegram[f].u16RegAdd  = Meters[i].Setup.Fr[j].REGsAdd; 
-            telegram[f].u16CoilsNo = Meters[i].Setup.Fr[j].NumberREGs;        
-            telegram[f].au16reg    = Meters[i].Data_Reg_Meters + Meters[i].Setup.Fr[j].Pointer;
-            f++;
-//            printf("f %d\r",f);
-//            printf("fFr2 %d\r",Num_Fr);
-        }
-//        printf("i %d\r",i);
+        telegram[i].Allow_EN = 1;
+        telegram[i].u8id = i+1;
+        telegram[i].u8fct = Sensor[i].Setup.Func;
+        telegram[i].u16RegAdd  = Sensor[i].Setup.Frame.REGsAdd; 
+        telegram[i].u16CoilsNo = Sensor[i].Setup.Frame.NumberREGs;        
+        telegram[i].au16reg    = Sensor[i].Data;     
     }
-//    printf("Num_Fr2 %d\r",Num_Fr);
 }
 void SES_ModbusRTU_Master_Init(void)
 {
@@ -462,7 +445,7 @@ static int8_t SES_Modbus_Master_poll(void)
         SES_Modbus.u8state = COM_IDLE;
         SES_Modbus.u8lastError = NO_REPLY;
         SES_Modbus.u16errCnt++;
-        Meters[SES_Modbus.u8id - 1].Status = MM_Disconnected;
+      
         return 0;
     }
 
@@ -484,7 +467,7 @@ static int8_t SES_Modbus_Master_poll(void)
     {
         SES_Modbus.u8state = COM_IDLE;
         SES_Modbus.u16errCnt++;
-        Meters[SES_Modbus.u8id - 1].Status = MM_Disconnected;
+     
         return i8state;
     }
 
@@ -493,12 +476,12 @@ static int8_t SES_Modbus_Master_poll(void)
     if (u8exception != 0)
     {
         SES_Modbus.u8state = COM_IDLE;
-        Meters[SES_Modbus.u8id - 1].Status = MM_Disconnected;
+   
         return u8exception;
     }
     else
     {
-        Meters[SES_Modbus.u8id - 1].Status = MM_Connected;
+
     }
     // process answer
     switch( SES_Modbus.au8Buffer[ FUNC ] )

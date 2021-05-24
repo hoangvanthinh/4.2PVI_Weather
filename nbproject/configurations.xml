@@ -39,18 +39,6 @@
         <itemPath>Modbus/ModbusTCPIP_Server.h</itemPath>
         <itemPath>Modbus/ModbusRTU_Slave.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="Multile_Meter"
-                     displayName="Multile_Meter"
-                     projectFiles="true">
-        <itemPath>Multile_Meter/0_DeviceEx.h</itemPath>
-        <itemPath>Multile_Meter/1_SELEC_MFM384.h</itemPath>
-        <itemPath>Multile_Meter/2_SELEC_EM368C.h</itemPath>
-        <itemPath>Multile_Meter/3_Schneider_PM2120.h</itemPath>
-        <itemPath>Multile_Meter/4_SELEC_MFM374.h</itemPath>
-        <itemPath>Multile_Meter/6_MIKRO_DPM380_415AD.h</itemPath>
-        <itemPath>Multile_Meter/5_TENSE_EM_07K.h</itemPath>
-        <itemPath>Multile_Meter/7_MITSU_ME96SSRA_MB.h</itemPath>
-      </logicalFolder>
       <logicalFolder name="sysconf_inc" displayName="sysconf_inc" projectFiles="true">
         <itemPath>Framework/sysconf_inc/system_config.h</itemPath>
         <itemPath>Framework/sysconf_inc/system_inc.h</itemPath>
@@ -108,12 +96,45 @@
         <itemPath>Framework/tcpip/zero_conf_link_local.h</itemPath>
         <itemPath>Framework/tcpip/zero_conf_link_multicast_dns.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="WeatherSensor"
+                     displayName="WeatherSensor"
+                     projectFiles="true">
+        <logicalFolder name="1.Irradiation"
+                       displayName="1.Irradiation"
+                       projectFiles="true">
+          <itemPath>WeatherSensor/1.Irradiation/0.Irradiation.h</itemPath>
+          <itemPath>WeatherSensor/1.Irradiation/1.RIKA_RK200_04.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="2.Windirection"
+                       displayName="2.Windirection"
+                       projectFiles="true">
+          <itemPath>WeatherSensor/2.Windirection/0.Windirection.h</itemPath>
+          <itemPath>WeatherSensor/2.Windirection/1.RIKA_RK110_01.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="3.WindSpeed" displayName="3.WindSpeed" projectFiles="true">
+          <itemPath>WeatherSensor/3.WindSpeed/0.Winspeed.h</itemPath>
+          <itemPath>WeatherSensor/3.WindSpeed/1.RIKA_RK100_01.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="4.Ambient_Temperature"
+                       displayName="4.Ambient_Temperature"
+                       projectFiles="true">
+        </logicalFolder>
+        <logicalFolder name="5.AirHumidity"
+                       displayName="5.AirHumidity"
+                       projectFiles="true">
+        </logicalFolder>
+        <logicalFolder name="6.Atmospheric"
+                       displayName="6.Atmospheric"
+                       projectFiles="true">
+        </logicalFolder>
+        <logicalFolder name="7.Rain" displayName="7.Rain" projectFiles="true">
+        </logicalFolder>
+        <itemPath>WeatherSensor/Weather.h</itemPath>
+      </logicalFolder>
       <itemPath>4_2_Data.h</itemPath>
       <itemPath>SES.h</itemPath>
       <itemPath>Sstype.h</itemPath>
       <itemPath>user.h</itemPath>
-      <itemPath>DS18B20x27.h</itemPath>
-      <itemPath>DHT22.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -151,18 +172,6 @@
         <itemPath>Modbus/ModbusTCPServer.c</itemPath>
         <itemPath>Modbus/ModbusRTU_Slave.c</itemPath>
       </logicalFolder>
-      <logicalFolder name="Multile_Meter"
-                     displayName="Multile_Meter"
-                     projectFiles="true">
-        <itemPath>Multile_Meter/0_DeviceEx.c</itemPath>
-        <itemPath>Multile_Meter/1_SELEC_MFM384.c</itemPath>
-        <itemPath>Multile_Meter/2_SELEC_EM368C.c</itemPath>
-        <itemPath>Multile_Meter/3_Schneider_PM2120.c</itemPath>
-        <itemPath>Multile_Meter/4_SELEC_MFM374.c</itemPath>
-        <itemPath>Multile_Meter/6_MIKRO_DPM380_415AD.c</itemPath>
-        <itemPath>Multile_Meter/5_TENSE_EM_07K.c</itemPath>
-        <itemPath>Multile_Meter/7_MITSU_ME96SSRA_MB.c</itemPath>
-      </logicalFolder>
       <logicalFolder name="tcpip" displayName="tcpip" projectFiles="true">
         <logicalFolder name="src" displayName="src" projectFiles="true">
           <logicalFolder name="common" displayName="common" projectFiles="true">
@@ -199,11 +208,44 @@
           <itemPath>Framework/tcpip/src/announce.c</itemPath>
         </logicalFolder>
       </logicalFolder>
+      <logicalFolder name="WeatherSensor"
+                     displayName="WeatherSensor"
+                     projectFiles="true">
+        <logicalFolder name="1.Irradiation"
+                       displayName="1.Irradiation"
+                       projectFiles="true">
+          <itemPath>WeatherSensor/1.Irradiation/0.Irradiation.c</itemPath>
+          <itemPath>WeatherSensor/1.Irradiation/1.RIKA_RK200_04.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="2.Windirection"
+                       displayName="2.Windirection"
+                       projectFiles="true">
+          <itemPath>WeatherSensor/2.Windirection/1.RIKA_RK110_01.c</itemPath>
+          <itemPath>WeatherSensor/2.Windirection/0.Winddirection.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="3.WindSpeed" displayName="3.WindSpeed" projectFiles="true">
+          <itemPath>WeatherSensor/3.WindSpeed/1.RIKA_RK100_01.c</itemPath>
+          <itemPath>WeatherSensor/3.WindSpeed/0.Windspeed.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="4.Ambient_Temperature"
+                       displayName="4.Ambient_Temperature"
+                       projectFiles="true">
+        </logicalFolder>
+        <logicalFolder name="5.AirHumidity"
+                       displayName="5.AirHumidity"
+                       projectFiles="true">
+        </logicalFolder>
+        <logicalFolder name="6.Atmospheric"
+                       displayName="6.Atmospheric"
+                       projectFiles="true">
+        </logicalFolder>
+        <logicalFolder name="7.Rain" displayName="7.Rain" projectFiles="true">
+        </logicalFolder>
+        <itemPath>WeatherSensor/Weather.c</itemPath>
+      </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>4_2_Data.c</itemPath>
       <itemPath>user.c</itemPath>
-      <itemPath>DS18B20x27.c</itemPath>
-      <itemPath>DHT22.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -224,7 +266,7 @@
         <targetDevice>dsPIC33EP512MU810</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pk4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.41</languageToolchainVersion>
         <platform>3</platform>

@@ -3,6 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>4.2PV_Weather</name>
             <name>4.2-LI</name>
             <name>4.2-I_4.27_Setup</name>
             <name>4.2-I_4.2633_SID</name>
