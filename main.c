@@ -74,10 +74,6 @@ int main(void) {
     
     while (1) {
         
-//        if (TickGet() - t >= TICK_SECOND) {
-//            t = TickGet();
-//            RD_RED_Toggle();
-//        }
         SES_ModbusTCP_Server_Process();
         SES_ModbusRTU_Master_Process();
         SES_ModbusRTU_Slave_Process();
