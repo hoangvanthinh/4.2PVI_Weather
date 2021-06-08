@@ -1,6 +1,6 @@
 * Project: SEMS-PV- Weather Sensor
-* Author: Mr.Thinh Hoang Van
-* Email: thinh0702@gmail.com
+* Author: Mr.Tran Dinh Chien
+* Email: trandinhchien28071998@gmail.com
 
 /*******************************************************************************/
 * 1st: Initialization
