@@ -105,7 +105,7 @@ static void InitAppConfig(void) {
     memset((void *) &AppConfig, 0x00, sizeof (AppConfig));
     AppConfig.Flags.bInConfigMode = true;
     //AppConfig.Flags.bInConfigMode = false ;
-    SerializedMACAddress[5] = Parameter42.IP[3];
+    //SerializedMACAddress[5] = Parameter42.IP[3];
 
     memcpypgm2ram((void*) &AppConfig.MyMACAddr, (ROM void*) SerializedMACAddress,
             sizeof (AppConfig.MyMACAddr));
@@ -124,30 +124,30 @@ static void InitAppConfig(void) {
 #else
     AppConfig.Flags.bIsDHCPEnabled = false;
 
-    //	AppConfig.MyIPAddr.Val = MY_DEFAULT_IP_ADDR_BYTE1 | MY_DEFAULT_IP_ADDR_BYTE2<<8ul 
-    //					| MY_DEFAULT_IP_ADDR_BYTE3<<16ul | MY_DEFAULT_IP_ADDR_BYTE4<<24ul;
-    //	AppConfig.DefaultIPAddr.Val = AppConfig.MyIPAddr.Val;
-    //	AppConfig.MyMask.Val = MY_DEFAULT_MASK_BYTE1 | MY_DEFAULT_MASK_BYTE2<<8ul 
-    //					| MY_DEFAULT_MASK_BYTE3<<16ul | MY_DEFAULT_MASK_BYTE4<<24ul;
-    //	AppConfig.DefaultMask.Val = AppConfig.MyMask.Val;
-    //	AppConfig.MyGateway.Val = MY_DEFAULT_GATE_BYTE1 | MY_DEFAULT_GATE_BYTE2<<8ul 
-    //					| MY_DEFAULT_GATE_BYTE3<<16ul | MY_DEFAULT_GATE_BYTE4<<24ul;
-    //	AppConfig.PrimaryDNSServer.Val = MY_DEFAULT_PRIMARY_DNS_BYTE1 | MY_DEFAULT_PRIMARY_DNS_BYTE2<<8ul  
-    //					| MY_DEFAULT_PRIMARY_DNS_BYTE3<<16ul  | MY_DEFAULT_PRIMARY_DNS_BYTE4<<24ul;
+    	AppConfig.MyIPAddr.Val = MY_DEFAULT_IP_ADDR_BYTE1 | MY_DEFAULT_IP_ADDR_BYTE2<<8ul 
+    					| MY_DEFAULT_IP_ADDR_BYTE3<<16ul | MY_DEFAULT_IP_ADDR_BYTE4<<24ul;
+    	AppConfig.DefaultIPAddr.Val = AppConfig.MyIPAddr.Val;
+    	AppConfig.MyMask.Val = MY_DEFAULT_MASK_BYTE1 | MY_DEFAULT_MASK_BYTE2<<8ul 
+    					| MY_DEFAULT_MASK_BYTE3<<16ul | MY_DEFAULT_MASK_BYTE4<<24ul;
+    	AppConfig.DefaultMask.Val = AppConfig.MyMask.Val;
+    	AppConfig.MyGateway.Val = MY_DEFAULT_GATE_BYTE1 | MY_DEFAULT_GATE_BYTE2<<8ul 
+    					| MY_DEFAULT_GATE_BYTE3<<16ul | MY_DEFAULT_GATE_BYTE4<<24ul;
+    	AppConfig.PrimaryDNSServer.Val = MY_DEFAULT_PRIMARY_DNS_BYTE1 | MY_DEFAULT_PRIMARY_DNS_BYTE2<<8ul  
+    					| MY_DEFAULT_PRIMARY_DNS_BYTE3<<16ul  | MY_DEFAULT_PRIMARY_DNS_BYTE4<<24ul;
 
-    AppConfig.MyIPAddr.Val = (uint32_t) Parameter42.IP[0] | (uint32_t) Parameter42.IP[1] << 8ul
-            | (uint32_t) Parameter42.IP[2] << 16ul | (uint32_t) Parameter42.IP[3] << 24ul;
-    AppConfig.DefaultIPAddr.Val = AppConfig.MyIPAddr.Val;
-    AppConfig.MyMask.Val = (uint32_t) Parameter42.SubnetMask[0] | (uint32_t) Parameter42.SubnetMask[1] << 8ul
-            | (uint32_t) Parameter42.SubnetMask[2] << 16ul | (uint32_t) Parameter42.SubnetMask[3] << 24ul;
-    AppConfig.DefaultMask.Val = AppConfig.MyMask.Val;
-    AppConfig.MyGateway.Val = (uint32_t) Parameter42.Gateway[0] | (uint32_t) Parameter42.Gateway[1] << 8ul
-            | (uint32_t) Parameter42.Gateway[2] << 16ul | (uint32_t) Parameter42.Gateway[3] << 24ul;
-    AppConfig.PrimaryDNSServer.Val = (uint32_t) Parameter42.DNS[0] | (uint32_t) Parameter42.DNS[1] << 8ul
-            | (uint32_t) Parameter42.DNS[2] << 16ul | (uint32_t) Parameter42.DNS[3] << 24ul;
-
-    AppConfig.SecondaryDNSServer.Val = MY_DEFAULT_SECONDARY_DNS_BYTE1 | MY_DEFAULT_SECONDARY_DNS_BYTE2 << 8ul
-            | MY_DEFAULT_SECONDARY_DNS_BYTE3 << 16ul | MY_DEFAULT_SECONDARY_DNS_BYTE4 << 24ul;
+//    AppConfig.MyIPAddr.Val = (uint32_t) Parameter42.IP[0] | (uint32_t) Parameter42.IP[1] << 8ul
+//            | (uint32_t) Parameter42.IP[2] << 16ul | (uint32_t) Parameter42.IP[3] << 24ul;
+//    AppConfig.DefaultIPAddr.Val = AppConfig.MyIPAddr.Val;
+//    AppConfig.MyMask.Val = (uint32_t) Parameter42.SubnetMask[0] | (uint32_t) Parameter42.SubnetMask[1] << 8ul
+//            | (uint32_t) Parameter42.SubnetMask[2] << 16ul | (uint32_t) Parameter42.SubnetMask[3] << 24ul;
+//    AppConfig.DefaultMask.Val = AppConfig.MyMask.Val;
+//    AppConfig.MyGateway.Val = (uint32_t) Parameter42.Gateway[0] | (uint32_t) Parameter42.Gateway[1] << 8ul
+//            | (uint32_t) Parameter42.Gateway[2] << 16ul | (uint32_t) Parameter42.Gateway[3] << 24ul;
+//    AppConfig.PrimaryDNSServer.Val = (uint32_t) Parameter42.DNS[0] | (uint32_t) Parameter42.DNS[1] << 8ul
+//            | (uint32_t) Parameter42.DNS[2] << 16ul | (uint32_t) Parameter42.DNS[3] << 24ul;
+//
+//    AppConfig.SecondaryDNSServer.Val = MY_DEFAULT_SECONDARY_DNS_BYTE1 | MY_DEFAULT_SECONDARY_DNS_BYTE2 << 8ul
+//            | MY_DEFAULT_SECONDARY_DNS_BYTE3 << 16ul | MY_DEFAULT_SECONDARY_DNS_BYTE4 << 24ul;
 #endif
     // ?f?t?H???g?ÌNetBIOS?z?X?g?¼?ð?[?h?·?é
     memcpypgm2ram(AppConfig.NetBIOSName, (ROM void *) MY_DEFAULT_HOST_NAME, 16);
@@ -383,8 +383,8 @@ static void readHoldingRegister(void) {
     //Length
     MODBUS_RX[4] = 0X0;
     MODBUS_RX[5] = 0X3 + MODBUS_RX[8];
-
-    memcpy(REG_TEMP, INPUT_REG + MODBUS_COMMAND.StartAddress.Val, MODBUS_COMMAND.NumberOfRegister.Val*2);
+    DataInterface_to_Modbus();
+    memcpy(REG_TEMP, SES_DATA + MODBUS_COMMAND.StartAddress.Val, MODBUS_COMMAND.NumberOfRegister.Val*2);
 //    memcpy(REG_TEMP, SES_INPUTREG[MODBUS_COMMAND.UnitID - 1] + MODBUS_COMMAND.StartAddress.Val, MODBUS_COMMAND.NumberOfRegister.Val * 2);
 
     for (a = 0; a < MODBUS_COMMAND.NumberOfRegister.Val; a++) {
@@ -426,7 +426,8 @@ static void writeHoldingRegister(void) {
     for (a = 0; a < MODBUS_COMMAND.NumberOfRegister.Val; a++) {
         REG_TEMP[(BYTE) a] = ((REG_TEMP[(BYTE) a] & 0x00FF) << 8 | (REG_TEMP[(BYTE) a] & 0xFF00) >> 8);
     }
-    memcpy(HOLDING_REG + MODBUS_COMMAND.StartAddress.Val, REG_TEMP, MODBUS_COMMAND.NumberOfRegister.Val * 2);
+    memcpy(Relay_State + MODBUS_COMMAND.StartAddress.Val, REG_TEMP, MODBUS_COMMAND.NumberOfRegister.Val * 2);
+    Relay_Process();
 
 }
 
