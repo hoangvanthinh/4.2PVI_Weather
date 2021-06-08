@@ -39,6 +39,9 @@
         <itemPath>Modbus/ModbusTCPIP_Server.h</itemPath>
         <itemPath>Modbus/ModbusRTU_Slave.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f1" displayName="Relay" projectFiles="true">
+        <itemPath>Relay/relay.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="sysconf_inc" displayName="sysconf_inc" projectFiles="true">
         <itemPath>Framework/sysconf_inc/system_config.h</itemPath>
         <itemPath>Framework/sysconf_inc/system_inc.h</itemPath>
@@ -118,16 +121,20 @@
         <logicalFolder name="4.Ambient_Temperature"
                        displayName="4.Ambient_Temperature"
                        projectFiles="true">
+          <itemPath>WeatherSensor/4.Ambient_temperature/0.Ambient_temperature.h</itemPath>
         </logicalFolder>
         <logicalFolder name="5.AirHumidity"
                        displayName="5.AirHumidity"
                        projectFiles="true">
+          <itemPath>WeatherSensor/5.AirHumidity/0.Airhumidity.h</itemPath>
         </logicalFolder>
         <logicalFolder name="6.Atmospheric"
                        displayName="6.Atmospheric"
                        projectFiles="true">
+          <itemPath>WeatherSensor/6.Atmospheric/0.Atmospheric.h</itemPath>
         </logicalFolder>
         <logicalFolder name="7.Rain" displayName="7.Rain" projectFiles="true">
+          <itemPath>WeatherSensor/7.Rain/0.Rain.h</itemPath>
         </logicalFolder>
         <itemPath>WeatherSensor/Weather.h</itemPath>
       </logicalFolder>
@@ -171,6 +178,9 @@
         <itemPath>Modbus/ModbusRTU_Master.c</itemPath>
         <itemPath>Modbus/ModbusTCPServer.c</itemPath>
         <itemPath>Modbus/ModbusRTU_Slave.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="Relay" projectFiles="true">
+        <itemPath>Relay/relay.c</itemPath>
       </logicalFolder>
       <logicalFolder name="tcpip" displayName="tcpip" projectFiles="true">
         <logicalFolder name="src" displayName="src" projectFiles="true">
@@ -230,16 +240,20 @@
         <logicalFolder name="4.Ambient_Temperature"
                        displayName="4.Ambient_Temperature"
                        projectFiles="true">
+          <itemPath>WeatherSensor/4.Ambient_temperature/0.Ambient_temperature.c</itemPath>
         </logicalFolder>
         <logicalFolder name="5.AirHumidity"
                        displayName="5.AirHumidity"
                        projectFiles="true">
+          <itemPath>WeatherSensor/5.AirHumidity/0.Airhumidity.c</itemPath>
         </logicalFolder>
         <logicalFolder name="6.Atmospheric"
                        displayName="6.Atmospheric"
                        projectFiles="true">
+          <itemPath>WeatherSensor/6.Atmospheric/0.Atmospheric.c</itemPath>
         </logicalFolder>
         <logicalFolder name="7.Rain" displayName="7.Rain" projectFiles="true">
+          <itemPath>WeatherSensor/7.Rain/0.Rain.c</itemPath>
         </logicalFolder>
         <itemPath>WeatherSensor/Weather.c</itemPath>
       </logicalFolder>
@@ -266,9 +280,9 @@
         <targetDevice>dsPIC33EP512MU810</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>pk4hybrid</platformTool>
         <languageToolchain>XC16</languageToolchain>
-        <languageToolchainVersion>1.41</languageToolchainVersion>
+        <languageToolchainVersion>1.61</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>

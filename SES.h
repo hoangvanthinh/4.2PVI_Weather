@@ -63,6 +63,7 @@
 //#include "DS18B20x27.h"
 //#include "DHT22.h"
 #include "WeatherSensor/Weather.h"
+#include "Relay/relay.h"
 
 
 #define MY_name_INTERFACE_L  1

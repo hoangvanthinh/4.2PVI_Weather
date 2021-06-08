@@ -121,7 +121,7 @@ typedef struct
     uint8_t au8Buffer[MAX_BUFFER];
     uint8_t u8BufferSize;
     uint8_t u8lastRec;
-    uint16_t *au16regs;
+    __eds__ uint16_t *au16regs;
     uint16_t u16InCnt, u16OutCnt, u16errCnt;
     uint16_t u16timeOut;
     uint32_t u32time, u32timeOut, u32overTime;

@@ -6,19 +6,19 @@ build/default/production/WeatherSensor/Weather.o: WeatherSensor/Weather.c \
  WeatherSensor/../mcc_generated_files/system_types.h \
  WeatherSensor/../mcc_generated_files/clock.h \
  WeatherSensor/../mcc_generated_files/pin_manager.h \
- WeatherSensor/../mcc_generated_files/watchdog.h \
- WeatherSensor/../mcc_generated_files/i2c2_driver.h \
  WeatherSensor/../mcc_generated_files/interrupt_manager.h \
  WeatherSensor/../mcc_generated_files/traps.h \
  WeatherSensor/../mcc_generated_files/drivers/i2c_simple_master.h \
  WeatherSensor/../mcc_generated_files/drivers/../drivers/i2c_types.h \
+ WeatherSensor/../mcc_generated_files/i2c2_driver.h \
+ WeatherSensor/../mcc_generated_files/watchdog.h \
+ WeatherSensor/../mcc_generated_files/spi1.h \
+ WeatherSensor/../mcc_generated_files/uart3.h \
  WeatherSensor/../mcc_generated_files/uart1.h \
- WeatherSensor/../mcc_generated_files/tmr3.h \
  WeatherSensor/../mcc_generated_files/drivers/i2c_master.h \
  WeatherSensor/../mcc_generated_files/drivers/i2c_types.h \
+ WeatherSensor/../mcc_generated_files/tmr3.h \
  WeatherSensor/../mcc_generated_files/tmr2.h \
- WeatherSensor/../mcc_generated_files/uart3.h \
- WeatherSensor/../mcc_generated_files/spi1.h \
  WeatherSensor/../Framework/tcpip/tcpip.h \
  WeatherSensor/../Framework/tcpip/../../Framework/sysconf_inc/system_config.h \
  WeatherSensor/../Framework/tcpip/../../Framework/sysconf_inc/system_inc.h \
@@ -60,7 +60,10 @@ build/default/production/WeatherSensor/Weather.o: WeatherSensor/Weather.c \
  WeatherSensor/../WeatherSensor/1.Irradiation/0.Irradiation.h \
  WeatherSensor/../WeatherSensor/1.Irradiation/1.RIKA_RK200_04.h \
  WeatherSensor/../WeatherSensor/2.Windirection/0.Windirection.h \
- WeatherSensor/../WeatherSensor/3.WindSpeed/0.Winspeed.h
+ WeatherSensor/../WeatherSensor/2.Windirection/1.RIKA_RK110_01.h \
+ WeatherSensor/../WeatherSensor/3.WindSpeed/0.Winspeed.h \
+ WeatherSensor/../WeatherSensor/3.WindSpeed/1.RIKA_RK100_01.h \
+ WeatherSensor/../Relay/relay.h
 
 WeatherSensor/../SES.h:
 
@@ -78,10 +81,6 @@ WeatherSensor/../mcc_generated_files/clock.h:
 
 WeatherSensor/../mcc_generated_files/pin_manager.h:
 
-WeatherSensor/../mcc_generated_files/watchdog.h:
-
-WeatherSensor/../mcc_generated_files/i2c2_driver.h:
-
 WeatherSensor/../mcc_generated_files/interrupt_manager.h:
 
 WeatherSensor/../mcc_generated_files/traps.h:
@@ -90,19 +89,23 @@ WeatherSensor/../mcc_generated_files/drivers/i2c_simple_master.h:
 
 WeatherSensor/../mcc_generated_files/drivers/../drivers/i2c_types.h:
 
-WeatherSensor/../mcc_generated_files/uart1.h:
+WeatherSensor/../mcc_generated_files/i2c2_driver.h:
 
-WeatherSensor/../mcc_generated_files/tmr3.h:
+WeatherSensor/../mcc_generated_files/watchdog.h:
+
+WeatherSensor/../mcc_generated_files/spi1.h:
+
+WeatherSensor/../mcc_generated_files/uart3.h:
+
+WeatherSensor/../mcc_generated_files/uart1.h:
 
 WeatherSensor/../mcc_generated_files/drivers/i2c_master.h:
 
 WeatherSensor/../mcc_generated_files/drivers/i2c_types.h:
 
+WeatherSensor/../mcc_generated_files/tmr3.h:
+
 WeatherSensor/../mcc_generated_files/tmr2.h:
-
-WeatherSensor/../mcc_generated_files/uart3.h:
-
-WeatherSensor/../mcc_generated_files/spi1.h:
 
 WeatherSensor/../Framework/tcpip/tcpip.h:
 
@@ -194,4 +197,10 @@ WeatherSensor/../WeatherSensor/1.Irradiation/1.RIKA_RK200_04.h:
 
 WeatherSensor/../WeatherSensor/2.Windirection/0.Windirection.h:
 
+WeatherSensor/../WeatherSensor/2.Windirection/1.RIKA_RK110_01.h:
+
 WeatherSensor/../WeatherSensor/3.WindSpeed/0.Winspeed.h:
+
+WeatherSensor/../WeatherSensor/3.WindSpeed/1.RIKA_RK100_01.h:
+
+WeatherSensor/../Relay/relay.h:

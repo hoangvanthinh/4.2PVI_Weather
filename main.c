@@ -51,6 +51,7 @@
 
 int main(void) {
     static uint32_t t;
+    Relay_Init();
     Tick_Init_SES();
     TickInit();
     t = TickGet();
@@ -73,14 +74,13 @@ int main(void) {
     
     while (1) {
         
-        if (TickGet() - t >= TICK_SECOND) {
-            t = TickGet();
-            RD_RED_Toggle();
-        }
-
+//        if (TickGet() - t >= TICK_SECOND) {
+//            t = TickGet();
+//            RD_RED_Toggle();
+//        }
         SES_ModbusTCP_Server_Process();
         SES_ModbusRTU_Master_Process();
-        
+        SES_ModbusRTU_Slave_Process();
       
     }
     return 1;

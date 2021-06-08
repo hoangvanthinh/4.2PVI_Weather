@@ -34,7 +34,7 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 
 
-#define TIMEOUT_RTU 3500
+#define TIMEOUT_RTU 1000
 #define SCAN_RATE 100
 
 enum COM_STATES

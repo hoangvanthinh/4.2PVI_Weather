@@ -1,0 +1,1 @@
+ -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-g,--no-relax$(MP_EXTRA_AS_POST) E:\Embedded\Microchip\PIC-16bit\Projects\4.2PVI_Weather\Framework\tcpip\src\common\big_int_helper.S

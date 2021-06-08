@@ -9,8 +9,8 @@ MODBUS_MASTER_TELEGRAM telegram[7];
 static uint8_t u8state; //!< machine state
 static uint8_t u8query; //!< pointer to message query
 static unsigned long u32wait;
- uint8_t MAX_Query = 0;
- uint8_t Num_Fr = 0;
+uint8_t MAX_Query = 0;
+uint8_t Num_Fr = 7;
 //=============================================================================
 static void SES_Modbus_setup(uint8_t u8id, char port, uint8_t u8txenpin);
 static void SES_ModbusRTU_Frame_Transaction(void);
@@ -114,15 +114,22 @@ void SES_ModbusRTU_Master_Process(void)
             }
             u8query++;
 
-           if (u8query >= MAX_Query) u8query = 0;
+           if (u8query >= MAX_Query) u8query = 0;      
            break;
          case 2:///////////////////////////////////////////////////////
 
            SES_Modbus_Master_poll(); // check incoming messages
-       
-           if (SES_Modbus_getState() == COM_IDLE) {
-             u8state = 0;
-             u32wait = millis() + SCAN_RATE; 
+
+           if (SES_Modbus_getState() == COM_IDLE) 
+           {
+                if(u8query == 0)
+                {
+                    printf("\nWindSpeed: %d\n",*(WeatherInfor.WindSpeed));
+                    printf("WindDirect: %d\n",*(WeatherInfor.WindDirection));
+                    printf("Irradiation: %d\n",*(WeatherInfor.Irradiation));
+                }
+                u8state = 0;
+                u32wait = millis() + SCAN_RATE; 
            }
            break;
      }  
@@ -142,6 +149,8 @@ static void SES_ModbusRTU_Frame_Transaction(void)
     // READ INIT FROM EEPROM
     // exp
     Sensor[SENSOR_IRRADIATION].Setup.Series = RIKA_200_04;
+    Sensor[SENSOR_WINDSPEED].Setup.Series = RIKA_100_01;
+    Sensor[SENSOR_WINDRIRECTION].Setup.Series = RIKA_110_01;
     //.....
     // WIND, RAIN
     
@@ -155,7 +164,7 @@ static void SES_ModbusRTU_Frame_Transaction(void)
         telegram[i].u8fct = Sensor[i].Setup.Func;
         telegram[i].u16RegAdd  = Sensor[i].Setup.Frame.REGsAdd; 
         telegram[i].u16CoilsNo = Sensor[i].Setup.Frame.NumberREGs;        
-        telegram[i].au16reg    = Sensor[i].Data;     
+        telegram[i].au16reg    = &(Sensor[i].Data);     
     }
 }
 void SES_ModbusRTU_Master_Init(void)
@@ -167,7 +176,8 @@ void SES_ModbusRTU_Master_Init(void)
     SES_Modbus_setup(0,0,RS485);
 
     SES_Modbus_start();   
-    SES_Modbus_setTimeOut(Setup_timeout.val16);
+    //SES_Modbus_setTimeOut(Setup_timeout.val16);
+    SES_Modbus_setTimeOut(1000);
     u32wait = millis() + 1000;
     u8state = u8query = 0;    
     
@@ -695,7 +705,8 @@ static void get_FC3()
 {
     uint8_t u8byte, i;
     u8byte = 3;
-
+    
+    //printf("get_fc3");
     for (i=0; i< SES_Modbus.au8Buffer[ 2 ] /2; i++)
     {
         SES_Modbus.au16regs[ i ] = word(

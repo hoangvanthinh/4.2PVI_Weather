@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=4.2PV_Weather.X
+PROJECTNAME=4.2PVI_Weather
 
 # Active Configuration
 DEFAULTCONF=default

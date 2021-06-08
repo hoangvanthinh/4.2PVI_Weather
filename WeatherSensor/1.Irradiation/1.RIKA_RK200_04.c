@@ -9,6 +9,5 @@ void RIKA_RK200_04_Init(void)
 }
 void Getdata_Sensor_RIKA_RK200_04(void)
 {
-    WeatherInfor.Irradiation = Sensor[SENSOR_IRRADIATION].Data;
-    
+    WeatherInfor.Irradiation = &(Sensor[SENSOR_IRRADIATION].Data); 
 }

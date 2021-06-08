@@ -8,19 +8,19 @@ build/default/production/WeatherSensor/3.WindSpeed/0.Windspeed.o: \
  WeatherSensor/3.WindSpeed/../../mcc_generated_files/system_types.h \
  WeatherSensor/3.WindSpeed/../../mcc_generated_files/clock.h \
  WeatherSensor/3.WindSpeed/../../mcc_generated_files/pin_manager.h \
- WeatherSensor/3.WindSpeed/../../mcc_generated_files/watchdog.h \
- WeatherSensor/3.WindSpeed/../../mcc_generated_files/i2c2_driver.h \
  WeatherSensor/3.WindSpeed/../../mcc_generated_files/interrupt_manager.h \
  WeatherSensor/3.WindSpeed/../../mcc_generated_files/traps.h \
  WeatherSensor/3.WindSpeed/../../mcc_generated_files/drivers/i2c_simple_master.h \
  WeatherSensor/3.WindSpeed/../../mcc_generated_files/drivers/../drivers/i2c_types.h \
+ WeatherSensor/3.WindSpeed/../../mcc_generated_files/i2c2_driver.h \
+ WeatherSensor/3.WindSpeed/../../mcc_generated_files/watchdog.h \
+ WeatherSensor/3.WindSpeed/../../mcc_generated_files/spi1.h \
+ WeatherSensor/3.WindSpeed/../../mcc_generated_files/uart3.h \
  WeatherSensor/3.WindSpeed/../../mcc_generated_files/uart1.h \
- WeatherSensor/3.WindSpeed/../../mcc_generated_files/tmr3.h \
  WeatherSensor/3.WindSpeed/../../mcc_generated_files/drivers/i2c_master.h \
  WeatherSensor/3.WindSpeed/../../mcc_generated_files/drivers/i2c_types.h \
+ WeatherSensor/3.WindSpeed/../../mcc_generated_files/tmr3.h \
  WeatherSensor/3.WindSpeed/../../mcc_generated_files/tmr2.h \
- WeatherSensor/3.WindSpeed/../../mcc_generated_files/uart3.h \
- WeatherSensor/3.WindSpeed/../../mcc_generated_files/spi1.h \
  WeatherSensor/3.WindSpeed/../../Framework/tcpip/tcpip.h \
  WeatherSensor/3.WindSpeed/../../Framework/tcpip/../../Framework/sysconf_inc/system_config.h \
  WeatherSensor/3.WindSpeed/../../Framework/tcpip/../../Framework/sysconf_inc/system_inc.h \
@@ -66,7 +66,10 @@ build/default/production/WeatherSensor/3.WindSpeed/0.Windspeed.o: \
  WeatherSensor/3.WindSpeed/../../WeatherSensor/1.Irradiation/0.Irradiation.h \
  WeatherSensor/3.WindSpeed/../../WeatherSensor/1.Irradiation/1.RIKA_RK200_04.h \
  WeatherSensor/3.WindSpeed/../../WeatherSensor/2.Windirection/0.Windirection.h \
- WeatherSensor/3.WindSpeed/../../WeatherSensor/3.WindSpeed/0.Winspeed.h
+ WeatherSensor/3.WindSpeed/../../WeatherSensor/2.Windirection/1.RIKA_RK110_01.h \
+ WeatherSensor/3.WindSpeed/../../WeatherSensor/3.WindSpeed/0.Winspeed.h \
+ WeatherSensor/3.WindSpeed/../../WeatherSensor/3.WindSpeed/1.RIKA_RK100_01.h \
+ WeatherSensor/3.WindSpeed/../../Relay/relay.h
 
 WeatherSensor/3.WindSpeed/../../SES.h:
 
@@ -84,10 +87,6 @@ WeatherSensor/3.WindSpeed/../../mcc_generated_files/clock.h:
 
 WeatherSensor/3.WindSpeed/../../mcc_generated_files/pin_manager.h:
 
-WeatherSensor/3.WindSpeed/../../mcc_generated_files/watchdog.h:
-
-WeatherSensor/3.WindSpeed/../../mcc_generated_files/i2c2_driver.h:
-
 WeatherSensor/3.WindSpeed/../../mcc_generated_files/interrupt_manager.h:
 
 WeatherSensor/3.WindSpeed/../../mcc_generated_files/traps.h:
@@ -96,19 +95,23 @@ WeatherSensor/3.WindSpeed/../../mcc_generated_files/drivers/i2c_simple_master.h:
 
 WeatherSensor/3.WindSpeed/../../mcc_generated_files/drivers/../drivers/i2c_types.h:
 
-WeatherSensor/3.WindSpeed/../../mcc_generated_files/uart1.h:
+WeatherSensor/3.WindSpeed/../../mcc_generated_files/i2c2_driver.h:
 
-WeatherSensor/3.WindSpeed/../../mcc_generated_files/tmr3.h:
+WeatherSensor/3.WindSpeed/../../mcc_generated_files/watchdog.h:
+
+WeatherSensor/3.WindSpeed/../../mcc_generated_files/spi1.h:
+
+WeatherSensor/3.WindSpeed/../../mcc_generated_files/uart3.h:
+
+WeatherSensor/3.WindSpeed/../../mcc_generated_files/uart1.h:
 
 WeatherSensor/3.WindSpeed/../../mcc_generated_files/drivers/i2c_master.h:
 
 WeatherSensor/3.WindSpeed/../../mcc_generated_files/drivers/i2c_types.h:
 
+WeatherSensor/3.WindSpeed/../../mcc_generated_files/tmr3.h:
+
 WeatherSensor/3.WindSpeed/../../mcc_generated_files/tmr2.h:
-
-WeatherSensor/3.WindSpeed/../../mcc_generated_files/uart3.h:
-
-WeatherSensor/3.WindSpeed/../../mcc_generated_files/spi1.h:
 
 WeatherSensor/3.WindSpeed/../../Framework/tcpip/tcpip.h:
 
@@ -200,4 +203,10 @@ WeatherSensor/3.WindSpeed/../../WeatherSensor/1.Irradiation/1.RIKA_RK200_04.h:
 
 WeatherSensor/3.WindSpeed/../../WeatherSensor/2.Windirection/0.Windirection.h:
 
+WeatherSensor/3.WindSpeed/../../WeatherSensor/2.Windirection/1.RIKA_RK110_01.h:
+
 WeatherSensor/3.WindSpeed/../../WeatherSensor/3.WindSpeed/0.Winspeed.h:
+
+WeatherSensor/3.WindSpeed/../../WeatherSensor/3.WindSpeed/1.RIKA_RK100_01.h:
+
+WeatherSensor/3.WindSpeed/../../Relay/relay.h:

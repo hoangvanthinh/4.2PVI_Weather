@@ -3,7 +3,7 @@
 union data Setup_timeout;
 
 uint8_t counter_life = 0;
-uint16_t SETUP_TIMEOUT = 0;
+uint16_t SETUP_TIMEOUT = 1000;
 
 Device_Git Device_Version;
 

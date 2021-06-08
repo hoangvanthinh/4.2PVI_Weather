@@ -7,19 +7,19 @@ build/default/production/mcc_generated_files/EEPROM3_driver.o: \
  mcc_generated_files/../mcc_generated_files/system_types.h \
  mcc_generated_files/../mcc_generated_files/clock.h \
  mcc_generated_files/../mcc_generated_files/pin_manager.h \
- mcc_generated_files/../mcc_generated_files/watchdog.h \
- mcc_generated_files/../mcc_generated_files/i2c2_driver.h \
  mcc_generated_files/../mcc_generated_files/interrupt_manager.h \
  mcc_generated_files/../mcc_generated_files/traps.h \
  mcc_generated_files/../mcc_generated_files/drivers/i2c_simple_master.h \
  mcc_generated_files/../mcc_generated_files/drivers/../drivers/i2c_types.h \
+ mcc_generated_files/../mcc_generated_files/i2c2_driver.h \
+ mcc_generated_files/../mcc_generated_files/watchdog.h \
+ mcc_generated_files/../mcc_generated_files/spi1.h \
+ mcc_generated_files/../mcc_generated_files/uart3.h \
  mcc_generated_files/../mcc_generated_files/uart1.h \
- mcc_generated_files/../mcc_generated_files/tmr3.h \
  mcc_generated_files/../mcc_generated_files/drivers/i2c_master.h \
  mcc_generated_files/../mcc_generated_files/drivers/i2c_types.h \
+ mcc_generated_files/../mcc_generated_files/tmr3.h \
  mcc_generated_files/../mcc_generated_files/tmr2.h \
- mcc_generated_files/../mcc_generated_files/uart3.h \
- mcc_generated_files/../mcc_generated_files/spi1.h \
  mcc_generated_files/../Framework/tcpip/tcpip.h \
  mcc_generated_files/../Framework/tcpip/../../Framework/sysconf_inc/system_config.h \
  mcc_generated_files/../Framework/tcpip/../../Framework/sysconf_inc/system_inc.h \
@@ -64,7 +64,10 @@ build/default/production/mcc_generated_files/EEPROM3_driver.o: \
  mcc_generated_files/../WeatherSensor/1.Irradiation/0.Irradiation.h \
  mcc_generated_files/../WeatherSensor/1.Irradiation/1.RIKA_RK200_04.h \
  mcc_generated_files/../WeatherSensor/2.Windirection/0.Windirection.h \
- mcc_generated_files/../WeatherSensor/3.WindSpeed/0.Winspeed.h
+ mcc_generated_files/../WeatherSensor/2.Windirection/1.RIKA_RK110_01.h \
+ mcc_generated_files/../WeatherSensor/3.WindSpeed/0.Winspeed.h \
+ mcc_generated_files/../WeatherSensor/3.WindSpeed/1.RIKA_RK100_01.h \
+ mcc_generated_files/../Relay/relay.h
 
 mcc_generated_files/../SES.h:
 
@@ -82,10 +85,6 @@ mcc_generated_files/../mcc_generated_files/clock.h:
 
 mcc_generated_files/../mcc_generated_files/pin_manager.h:
 
-mcc_generated_files/../mcc_generated_files/watchdog.h:
-
-mcc_generated_files/../mcc_generated_files/i2c2_driver.h:
-
 mcc_generated_files/../mcc_generated_files/interrupt_manager.h:
 
 mcc_generated_files/../mcc_generated_files/traps.h:
@@ -94,19 +93,23 @@ mcc_generated_files/../mcc_generated_files/drivers/i2c_simple_master.h:
 
 mcc_generated_files/../mcc_generated_files/drivers/../drivers/i2c_types.h:
 
-mcc_generated_files/../mcc_generated_files/uart1.h:
+mcc_generated_files/../mcc_generated_files/i2c2_driver.h:
 
-mcc_generated_files/../mcc_generated_files/tmr3.h:
+mcc_generated_files/../mcc_generated_files/watchdog.h:
+
+mcc_generated_files/../mcc_generated_files/spi1.h:
+
+mcc_generated_files/../mcc_generated_files/uart3.h:
+
+mcc_generated_files/../mcc_generated_files/uart1.h:
 
 mcc_generated_files/../mcc_generated_files/drivers/i2c_master.h:
 
 mcc_generated_files/../mcc_generated_files/drivers/i2c_types.h:
 
+mcc_generated_files/../mcc_generated_files/tmr3.h:
+
 mcc_generated_files/../mcc_generated_files/tmr2.h:
-
-mcc_generated_files/../mcc_generated_files/uart3.h:
-
-mcc_generated_files/../mcc_generated_files/spi1.h:
 
 mcc_generated_files/../Framework/tcpip/tcpip.h:
 
@@ -198,4 +201,10 @@ mcc_generated_files/../WeatherSensor/1.Irradiation/1.RIKA_RK200_04.h:
 
 mcc_generated_files/../WeatherSensor/2.Windirection/0.Windirection.h:
 
+mcc_generated_files/../WeatherSensor/2.Windirection/1.RIKA_RK110_01.h:
+
 mcc_generated_files/../WeatherSensor/3.WindSpeed/0.Winspeed.h:
+
+mcc_generated_files/../WeatherSensor/3.WindSpeed/1.RIKA_RK100_01.h:
+
+mcc_generated_files/../Relay/relay.h:

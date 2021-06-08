@@ -97,7 +97,7 @@ uint32_t g_DhcpRetryTimer = 0;
  *                  stack or its component routines are used.
  *
  ********************************************************************/
-void StackInit(void)
+ void StackInit(void)
 {
     static bool once = false;
     smStack = SM_STACK_IDLE;

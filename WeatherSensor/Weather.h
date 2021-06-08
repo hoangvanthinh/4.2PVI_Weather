@@ -8,8 +8,8 @@
 enum Weather_Sensor
 {
     SENSOR_WINDSPEED,
-    SENSOR_WINDRIRECTION,
     SENSOR_IRRADIATION,
+    SENSOR_WINDRIRECTION,
     SENSOR_AMBIENT_T,
     SENSOR_AIR_H,
     SENSOR_ATM,
@@ -35,17 +35,18 @@ typedef struct
     uint8_t EN;
 }SENSOR_SETUP;
 extern SENSOR_SETUP RIKA_RK200_04;
+extern SENSOR_SETUP RIKA_RK100_01;
+extern SENSOR_SETUP RIKA_RK110_01;
 
 typedef struct
 {
-    UINT16 WindSpeed;
-    UINT16 WindDirection;
-    UINT16 Irradiation;
-    UINT16 Ambient_T;
-    UINT16 Air_H;
-    UINT16 Rain;
-    UINT16 Atm;
-    
+    UINT16 *WindSpeed;
+    UINT16 *WindDirection;
+    UINT16 *Irradiation;
+    UINT16 *Ambient_T;
+    UINT16 *Air_H;
+    UINT16 *Rain;
+    UINT16 *Atm;   
 }WEATHER_DATA;
 
 extern WEATHER_DATA WeatherInfor;
@@ -54,8 +55,10 @@ typedef struct
 {
     SENSOR_SETUP Setup;
     UINT16 Data;
-    
+ 
 }WEATHER_SENSOR;
 extern WEATHER_SENSOR Sensor[7];
+extern uint16_t SES_DATA[7];
 
 void All_Sensor_Init(void);
+void DataInterface_to_Modbus(void);

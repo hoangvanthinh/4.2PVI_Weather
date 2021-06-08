@@ -58,10 +58,12 @@ void Tick_Init_SES(void)
     device_time = 0;//1293861600; // Jan 1 2011
     TMR2_SetInterruptHandler(&rtcc_handler);
 }
+
 void rtcc_handler(void)
 {
         device_time++;
 }
+
 uint32_t Get_millis(void)
 {
     return device_time;

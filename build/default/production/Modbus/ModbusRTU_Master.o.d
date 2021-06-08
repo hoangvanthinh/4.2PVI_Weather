@@ -7,19 +7,19 @@ build/default/production/Modbus/ModbusRTU_Master.o: \
  Modbus/../mcc_generated_files/system_types.h \
  Modbus/../mcc_generated_files/clock.h \
  Modbus/../mcc_generated_files/pin_manager.h \
- Modbus/../mcc_generated_files/watchdog.h \
- Modbus/../mcc_generated_files/i2c2_driver.h \
  Modbus/../mcc_generated_files/interrupt_manager.h \
  Modbus/../mcc_generated_files/traps.h \
  Modbus/../mcc_generated_files/drivers/i2c_simple_master.h \
  Modbus/../mcc_generated_files/drivers/../drivers/i2c_types.h \
+ Modbus/../mcc_generated_files/i2c2_driver.h \
+ Modbus/../mcc_generated_files/watchdog.h \
+ Modbus/../mcc_generated_files/spi1.h \
+ Modbus/../mcc_generated_files/uart3.h \
  Modbus/../mcc_generated_files/uart1.h \
- Modbus/../mcc_generated_files/tmr3.h \
  Modbus/../mcc_generated_files/drivers/i2c_master.h \
  Modbus/../mcc_generated_files/drivers/i2c_types.h \
- Modbus/../mcc_generated_files/tmr2.h \
- Modbus/../mcc_generated_files/uart3.h \
- Modbus/../mcc_generated_files/spi1.h Modbus/../Framework/tcpip/tcpip.h \
+ Modbus/../mcc_generated_files/tmr3.h \
+ Modbus/../mcc_generated_files/tmr2.h Modbus/../Framework/tcpip/tcpip.h \
  Modbus/../Framework/tcpip/../../Framework/sysconf_inc/system_config.h \
  Modbus/../Framework/tcpip/../../Framework/sysconf_inc/system_inc.h \
  Modbus/../Framework/tcpip/../../Framework/sysconf_inc/tcpip_config.h \
@@ -57,7 +57,10 @@ build/default/production/Modbus/ModbusRTU_Master.o: \
  Modbus/../WeatherSensor/1.Irradiation/0.Irradiation.h \
  Modbus/../WeatherSensor/1.Irradiation/1.RIKA_RK200_04.h \
  Modbus/../WeatherSensor/2.Windirection/0.Windirection.h \
- Modbus/../WeatherSensor/3.WindSpeed/0.Winspeed.h
+ Modbus/../WeatherSensor/2.Windirection/1.RIKA_RK110_01.h \
+ Modbus/../WeatherSensor/3.WindSpeed/0.Winspeed.h \
+ Modbus/../WeatherSensor/3.WindSpeed/1.RIKA_RK100_01.h \
+ Modbus/../Relay/relay.h
 
 Modbus/../SES.h:
 
@@ -75,10 +78,6 @@ Modbus/../mcc_generated_files/clock.h:
 
 Modbus/../mcc_generated_files/pin_manager.h:
 
-Modbus/../mcc_generated_files/watchdog.h:
-
-Modbus/../mcc_generated_files/i2c2_driver.h:
-
 Modbus/../mcc_generated_files/interrupt_manager.h:
 
 Modbus/../mcc_generated_files/traps.h:
@@ -87,19 +86,23 @@ Modbus/../mcc_generated_files/drivers/i2c_simple_master.h:
 
 Modbus/../mcc_generated_files/drivers/../drivers/i2c_types.h:
 
-Modbus/../mcc_generated_files/uart1.h:
+Modbus/../mcc_generated_files/i2c2_driver.h:
 
-Modbus/../mcc_generated_files/tmr3.h:
+Modbus/../mcc_generated_files/watchdog.h:
+
+Modbus/../mcc_generated_files/spi1.h:
+
+Modbus/../mcc_generated_files/uart3.h:
+
+Modbus/../mcc_generated_files/uart1.h:
 
 Modbus/../mcc_generated_files/drivers/i2c_master.h:
 
 Modbus/../mcc_generated_files/drivers/i2c_types.h:
 
+Modbus/../mcc_generated_files/tmr3.h:
+
 Modbus/../mcc_generated_files/tmr2.h:
-
-Modbus/../mcc_generated_files/uart3.h:
-
-Modbus/../mcc_generated_files/spi1.h:
 
 Modbus/../Framework/tcpip/tcpip.h:
 
@@ -191,4 +194,10 @@ Modbus/../WeatherSensor/1.Irradiation/1.RIKA_RK200_04.h:
 
 Modbus/../WeatherSensor/2.Windirection/0.Windirection.h:
 
+Modbus/../WeatherSensor/2.Windirection/1.RIKA_RK110_01.h:
+
 Modbus/../WeatherSensor/3.WindSpeed/0.Winspeed.h:
+
+Modbus/../WeatherSensor/3.WindSpeed/1.RIKA_RK100_01.h:
+
+Modbus/../Relay/relay.h:
