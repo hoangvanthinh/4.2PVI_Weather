@@ -2,7 +2,7 @@
 
 #include "../SES.h"
 
-uint16_t Relay_State[5]={0};
+uint16_t Relay_State[8]={0};
 
 void Relay_Process(void)
 {
