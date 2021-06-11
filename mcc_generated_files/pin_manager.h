@@ -219,11 +219,11 @@
   @Example
     <code>
     // Set RB3 high (1)
-    IO_RB3_SetHigh();
+    Temp_Hum_SetHigh();
     </code>
 
 */
-#define IO_RB3_SetHigh()          (_LATB3 = 1)
+#define Temp_Hum_SetHigh()          (_LATB3 = 1)
 /**
   @Summary
     Sets the GPIO pin, RB3, low using LATB3.
@@ -243,11 +243,11 @@
   @Example
     <code>
     // Set RB3 low (0)
-    IO_RB3_SetLow();
+    Temp_Hum_SetLow();
     </code>
 
 */
-#define IO_RB3_SetLow()           (_LATB3 = 0)
+#define Temp_Hum_SetLow()           (_LATB3 = 0)
 /**
   @Summary
     Toggles the GPIO pin, RB3, using LATB3.
@@ -267,11 +267,11 @@
   @Example
     <code>
     // Toggle RB3
-    IO_RB3_Toggle();
+    Temp_Hum_Toggle();
     </code>
 
 */
-#define IO_RB3_Toggle()           (_LATB3 ^= 1)
+#define Temp_Hum_Toggle()           (_LATB3 ^= 1)
 /**
   @Summary
     Reads the value of the GPIO pin, RB3.
@@ -293,11 +293,11 @@
     uint16_t portValue;
 
     // Read RB3
-    postValue = IO_RB3_GetValue();
+    postValue = Temp_Hum_GetValue();
     </code>
 
 */
-#define IO_RB3_GetValue()         _RB3
+#define Temp_Hum_GetValue()         _RB3
 /**
   @Summary
     Configures the GPIO pin, RB3, as an input.
@@ -317,11 +317,11 @@
   @Example
     <code>
     // Sets the RB3 as an input
-    IO_RB3_SetDigitalInput();
+    Temp_Hum_SetDigitalInput();
     </code>
 
 */
-#define IO_RB3_SetDigitalInput()  (_TRISB3 = 1)
+#define Temp_Hum_SetDigitalInput()  (_TRISB3 = 1)
 /**
   @Summary
     Configures the GPIO pin, RB3, as an output.
@@ -341,11 +341,11 @@
   @Example
     <code>
     // Sets the RB3 as an output
-    IO_RB3_SetDigitalOutput();
+    Temp_Hum_SetDigitalOutput();
     </code>
 
 */
-#define IO_RB3_SetDigitalOutput() (_TRISB3 = 0)
+#define Temp_Hum_SetDigitalOutput() (_TRISB3 = 0)
 /**
   @Summary
     Sets the GPIO pin, RB4, high using LATB4.
