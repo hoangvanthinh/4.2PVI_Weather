@@ -53,6 +53,8 @@
 /**
  Section: File specific functions
 */
+void (*TMR3_InterruptHandler)(void) = NULL;
+void TMR3_CallBack(void);
 
 /**
   Section: Data Type Definitions
@@ -90,26 +92,42 @@ void TMR3_Initialize (void)
 {
     //TMR3 0; 
     TMR3 = 0x00;
-    //Period = 0.0004999729 s; Frequency = 36850000 Hz; PR3 2302; 
-    PR3 = 0x8FE;
-    //TCKPS 1:8; TON disabled; TSIDL disabled; TCS FOSC/2; TGATE disabled; 
-    T3CON = 0x10;
+    //Period = 0.0000010041 s; Frequency = 36850000 Hz; PR3 36; 
+    PR3 = 0x24;
+    //TCKPS 1:1; TON disabled; TSIDL disabled; TCS FOSC/2; TGATE disabled; 
+    T3CON = 0x00;
 
+    if(TMR3_InterruptHandler == NULL)
+    {
+        TMR3_SetInterruptHandler(&TMR3_CallBack);
+    }
+
+    IFS0bits.T3IF = false;
+    IEC0bits.T3IE = true;
 	
     tmr3_obj.timerElapsed = false;
 
 }
 
 
-void TMR3_Tasks_16BitOperation( void )
+void __attribute__ ( ( interrupt, no_auto_psv ) ) _T3Interrupt (  )
 {
     /* Check if the Timer Interrupt/Status is set */
-    if(IFS0bits.T3IF)
-    {
-        tmr3_obj.count++;
-        tmr3_obj.timerElapsed = true;
-        IFS0bits.T3IF = false;
+
+    //***User Area Begin
+
+    // ticker function call;
+    // ticker is 1 -> Callback function gets called everytime this ISR executes
+    if(TMR3_InterruptHandler) 
+    { 
+           TMR3_InterruptHandler(); 
     }
+
+    //***User Area End
+
+    tmr3_obj.count++;
+    tmr3_obj.timerElapsed = true;
+    IFS0bits.T3IF = false;
 }
 
 void TMR3_Period16BitSet( uint16_t value )
@@ -139,13 +157,25 @@ uint16_t TMR3_Counter16BitGet( void )
 }
 
 
+void __attribute__ ((weak)) TMR3_CallBack(void)
+{
+    // Add your custom callback code here
+}
 
+void  TMR3_SetInterruptHandler(void (* InterruptHandler)(void))
+{ 
+    IEC0bits.T3IE = false;
+    TMR3_InterruptHandler = InterruptHandler; 
+    IEC0bits.T3IE = true;
+}
 
 void TMR3_Start( void )
 {
     /* Reset the status information */
     tmr3_obj.timerElapsed = false;
 
+    /*Enable the interrupt*/
+    IEC0bits.T3IE = true;
 
     /* Start the Timer */
     T3CONbits.TON = 1;
@@ -156,6 +186,8 @@ void TMR3_Stop( void )
     /* Stop the Timer */
     T3CONbits.TON = false;
 
+    /*Disable the interrupt*/
+    IEC0bits.T3IE = false;
 }
 
 bool TMR3_GetElapsedThenClear(void)
