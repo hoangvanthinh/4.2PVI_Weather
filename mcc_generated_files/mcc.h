@@ -52,18 +52,18 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
+#include "drivers/i2c_master.h"
+#include "i2c2_driver.h"
+#include "uart3.h"
+#include "tmr2.h"
+#include "uart1.h"
+#include "spi1.h"
+#include "reset.h"
+#include "drivers/i2c_simple_master.h"
+#include "tmr3.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "drivers/i2c_simple_master.h"
-#include "i2c2_driver.h"
-#include "reset.h"
 #include "watchdog.h"
-#include "spi1.h"
-#include "uart3.h"
-#include "uart1.h"
-#include "drivers/i2c_master.h"
-#include "tmr3.h"
-#include "tmr2.h"
 
 #ifndef _XTAL_FREQ
 #define _XTAL_FREQ  73700000UL
