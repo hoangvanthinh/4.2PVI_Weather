@@ -157,7 +157,16 @@ static void SES_ModbusRTU_Frame_Transaction(void)
     All_Sensor_Init();     
     
     int i = 0;
-    for(i = 0; i < MAX_Sensor; i++)
+//    for(i = 0; i < MAX_Sensor; i++)
+//    {
+//        telegram[i].Allow_EN = 1;
+//        telegram[i].u8id = i+1;
+//        telegram[i].u8fct = Sensor[i].Setup.Func;
+//        telegram[i].u16RegAdd  = Sensor[i].Setup.Frame.REGsAdd; 
+//        telegram[i].u16CoilsNo = Sensor[i;].Setup.Frame.NumberREGs;        
+//        telegram[i].au16reg    = &(Sensor[i].Data)     
+//    }
+    for(i = 0; i < 3; i++)
     {
         telegram[i].Allow_EN = 1;
         telegram[i].u8id = i+1;
