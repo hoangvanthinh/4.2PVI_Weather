@@ -61,7 +61,7 @@ void Tick_Init_SES(void)
 
 void rtcc_handler(void)
 {
-        device_time++;
+    device_time++;
 }
 
 uint32_t Get_millis(void)
