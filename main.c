@@ -71,6 +71,7 @@ int main(void) {
     SPEAKER_SetHigh();
     __delay_ms(200);
     SPEAKER_SetLow();
+    __delay_ms(2000);
     
     while (1) {
         
