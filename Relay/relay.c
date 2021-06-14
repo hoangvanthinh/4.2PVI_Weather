@@ -12,13 +12,12 @@ void Relay_Process(void)
     }
     else
         RELAY_SetHigh();
-    if(Relay_State[1] == 0)
-    {
-        RD_RED_SetLow();
-    }
-    else
-        RD_RED_SetHigh();
-        
+//    if(Relay_State[1] == 0)
+//    {
+//        RD_RED_SetLow();
+//    }
+//    else
+//        RD_RED_SetHigh();  
 }
 
 void Relay_Init(void)
