@@ -122,12 +122,13 @@ void SES_ModbusRTU_Master_Process(void)
 
            if (SES_Modbus_getState() == COM_IDLE) 
            {
-                if(u8query == 0)
-                {
-                    printf("\nWindSpeed: %d\n",*(WeatherInfor.WindSpeed));
-                    printf("WindDirect: %d\n",*(WeatherInfor.WindDirection));
-                    printf("Irradiation: %d\n",*(WeatherInfor.Irradiation));
-                }
+//                if(u8query == 0)
+//                {
+//                    printf("\nWindSpeed: %d\n",*(WeatherInfor.WindSpeed));
+//                    printf("WindDirect: %d\n",*(WeatherInfor.WindDirection));
+//                    printf("Irradiation: %d\n",*(WeatherInfor.Irradiation));
+//                    
+//                }
                 u8state = 0;
                 u32wait = millis() + SCAN_RATE; 
            }
