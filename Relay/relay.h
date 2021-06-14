@@ -7,7 +7,7 @@
 
 
 
-extern uint16_t Relay_State[5];
+extern uint16_t Relay_State[8];
 
 void Relay_Process(void);
 void Relay_Init(void);
