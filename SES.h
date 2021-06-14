@@ -63,6 +63,7 @@
 //#include "DS18B20x27.h"
 //#include "DHT22.h"
 #include "WeatherSensor/Weather.h"
+#include "WeatherSensor/AM2105A/am2105a.h"
 #include "Relay/relay.h"
 
 
