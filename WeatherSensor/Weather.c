@@ -65,8 +65,8 @@ void All_Sensor_Init(void) {
 void DataInterface_to_Modbus(void)
 {
     SES_DATA[0] = (*WeatherInfor.WindSpeed)/100;
-    SES_DATA[1] = *WeatherInfor.Irradiation;
-    SES_DATA[2] = (*WeatherInfor.WindDirection)/10;
+    SES_DATA[2] = *WeatherInfor.Irradiation;
+    SES_DATA[1] = (*WeatherInfor.WindDirection)/10;
 //    SES_DATA[3] = *WeatherInfor.Ambient_T;
 //    SES_DATA[4] = *WeatherInfor.Air_H;
     SES_DATA[3] = (Sensor_data[1])/10;
